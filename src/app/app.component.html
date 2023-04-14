@@ -1,0 +1,114 @@
+<h1 class="bg-info text-center p-4 my-4">card</h1>
+<app-posts [postchild]="postsInfo[0]"></app-posts>
+<app-posts [postchild]="postsInfo[1]"></app-posts>
+<app-posts [postchild]="postsInfo[2]"></app-posts>
+<app-posts [postchild]="post" *ngFor="let post of postsInfo"></app-posts>
+
+<!-- only one object -->
+<!-- <app-posts [postchild]="postsInfo[0]"></app-posts> -->
+<!-- inside array object -->
+<!-- <app-posts [postchild]="post" *ngFor="let post of postsInfo"></app-posts> -->
+
+<!-- <app-mycom [childesh]="users[0]"></app-mycom> -->
+
+<!-- <app-mycom [childesh]="element" *ngFor="let element of users"></app-mycom> -->
+<h1 class="bg-info text-center p-4 my-4">same component form-table</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="fname">first name</label>
+        <input
+          type="text"
+          [(ngModel)]="fnameval"
+          id="fname"
+          class="form-control"
+        /><!-- [fnameval]="Parentfname" -->
+      </div>
+      <div class="form-group">
+        <label for="lname">last name</label>
+        <input
+          type="text"
+          [(ngModel)]="lnameval"
+          id="lname"
+          class="form-control"
+        /><!-- [lnameval]="Parentlname" -->
+      </div>
+      <div class="form-group">
+        <label for="contact">contact</label>
+        <input
+          type="text"
+          [(ngModel)]="contactval"
+          id="contact"
+          class="form-control"
+        /><!-- [contactval]="Parentcontact" -->
+      </div>
+      <div class="form-group">
+        <label for="email">email</label>
+        <input
+          type="text"
+          [(ngModel)]="emailval"
+          id="email"
+          class="form-control"
+        /><!-- [emailval]="Parentemail" -->
+      </div>
+      <div class="text-right">
+        <button class="btn btn-primary" (click)="onAddstudent()">
+          Add student
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="table table-bordered">
+        <thead>
+          <tr>
+            <th>sr no</th>
+            <th>fname</th>
+            <th>lname</th>
+            <th>contact</th>
+            <th>email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let std of stdarray; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ std.fname }}</td>
+            <td>{{ std.lname }}</td>
+            <td>{{ std.contact }}</td>
+            <td>{{ std.email }}</td>
+          </tr>
+        </tbody>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1 class="bg-info text-center p-4 my-4">ngfor table</h1>
+<div class="container">
+  <div class="row">
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr>
+          <th>sr.no</th>
+          <th>name</th>
+          <th>gender</th>
+          <th>age</th>
+          <th>department</th>
+          <th>salary</th>
+          <th>yearsOfExperience</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of employees;index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.gender }}</td>
+          <td>{{ item.age }}</td>
+          <td>{{ item.department }}</td>
+          <td>{{ item.salary }}</td>
+          <td>{{ item.yearsOfExperience }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
